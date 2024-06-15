@@ -1,0 +1,12 @@
+php_value display_errors Off
+php_value mbstring.http_input auto
+php_value date.timezone Asia/Calcutta
+RewriteEngine on
+RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+RewriteRule ^ /%1 [NC,L,R]
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^ %{REQUEST_URI}.php [NC,L]
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+ErrorDocument 404 https://sid.free.nf/hello.html
+ErrorDocument 500 https://sid.free.nf/hello.html

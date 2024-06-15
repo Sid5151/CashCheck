@@ -1,0 +1,93 @@
+span {
+  font-size: larger;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#dbtn {
+  background-color: red;
+  color: white;
+}
+
+#dbtn:hover {
+  color: yellow;
+
+  transform: scale(1.1);
+}
+
+#ebtn {
+  background-color: blue;
+  color: white;
+}
+
+#ebtn:hover {
+  color: yellow;
+
+  transform: scale(1.1);
+}
+
+#te {
+  font-weight: 700;
+}
+
+#prev,
+#next {
+  background-color: red;
+  color: yellow;
+  font-size: 20px;
+  width: 4rem;
+  border-radius: 1rem;
+  float: left;
+}
+
+#prev {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+#prev2,
+#next2 {
+  background-color: red;
+  color: yellow;
+  font-size: 20px;
+  width: 4rem;
+  border-radius: 1rem;
+  float: left;
+}
+
+#prev2 {
+  margin-right: 2rem;
+}
+
+#prev3,
+#next3 {
+  background-color: red;
+  color: yellow;
+  font-size: 20px;
+  width: 4rem;
+  border-radius: 1rem;
+  float: left;
+}
+
+#prev3 {
+  margin-right: 2rem;
+}
+
+#prev4,
+#next4 {
+  background-color: red;
+  color: yellow;
+  font-size: 20px;
+  width: 4rem;
+  border-radius: 1rem;
+  float: left;
+}
+
+#prev4 {
+  margin-right: 2rem;
+}
+
+/* #divwala button:hover {
+  color: red;
+  background-color: yellow;
+} */

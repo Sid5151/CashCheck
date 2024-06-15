@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speech-to-Text</title>
+  </head>
+  <body>
+    <button id="startButton">Start Recording</button>
+    <div id="transcription"></div>
+
+    <script>
+      // Select DOM elements
+      const startButton = document.getElementById("startButton");
+      const transcription = document.getElementById("transcription");
+
+      // Event handler for when the startButton is clicked
+      startButton.addEventListener("click", () => {
+        // Detect user's browser
+        const userAgent = navigator.userAgent;
+
+        if (
+          userAgent.indexOf("Chrome") === -1 &&
+          userAgent.indexOf("Brave") === -1
+        ) {
+          alert(
+            "This feature is only available in Google Chrome. Please use Chrome to access this feature."
+          );
+        } else if (userAgent.indexOf("Brave") !== -1) {
+          alert(
+            "This feature is only available in Google Chrome. Please use Chrome to access this feature."
+          );
+        } else {
+          // Initialize SpeechRecognition object
+          const recognition =
+            new webkitSpeechRecognition() || new SpeechRecognition();
+
+          // Set recognition parameters
+          recognition.lang = "en-US"; // Set the language
+          recognition.interimResults = true; // Get interim results
+          recognition.continuous = true; // Keep recognition active even after a pause
+
+          let timeoutId; // Variable to store timer ID
+
+          // Event handler for when speech recognition starts
+          recognition.onstart = () => {
+            startButton.textContent = "Recording...";
+          };
+
+          // Event handler for when speech recognition ends
+          recognition.onend = () => {
+            startButton.textContent = "Start Recording";
+            clearTimeout(timeoutId); // Clear the timer when recognition ends
+          };
+
+          // Event handler for when speech is recognized
+          recognition.onresult = (event) => {
+            const transcript = Array.from(event.results)
+              .map((result) => result[0].transcript)
+              .join("");
+            transcription.textContent = transcript;
+
+            // Clear the previous timer and set a new one after each result
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+              recognition.stop(); // Stop recognition after 3.5 seconds of silence
+            }, 3500);
+          };
+
+          // Start speech recognition
+          recognition.start();
+        }
+      });
+    </script>
+  </body>
+</html>

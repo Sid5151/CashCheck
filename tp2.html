@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        color: whitesmoke;
+        box-sizing: border-box;
+      }
+      #container {
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+      }
+      #navbar {
+        display: flex;
+        background-color: burlywood;
+        text-align: center;
+        height: 7vh;
+        padding: 1rem;
+        justify-content: center;
+        align-items: center;
+      }
+      #main {
+        display: flex;
+        flex: 1;
+        background-color: brown;
+      }
+      #imgcontainer {
+        background-color: steelblue;
+        padding: 0.5rem;
+        flex-direction: row;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+      }
+      #content h2 {
+        text-align: center;
+        color: black;
+        color: yellow;
+      }
+      #footer {
+        background-color: seagreen;
+        text-align: center;
+        height: 35px;
+        padding: 1rem;
+      }
+      img {
+        width: 100%;
+        max-width: 25rem;
+        padding: 1rem;
+      }
+      @media screen and (max-width: 420px) {
+        img {
+          width: 100%;
+          padding: 1rem;
+          max-width: 15rem;
+          flex: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="navbar">Navbar</div>
+      <div id="main">
+        <div id="content">
+          <h2>This is a gallery of images</h2>
+          <div id="imgcontainer">
+            <div class="img"><img src="FK.jpg" alt="" srcset="" /></div>
+            <div class="img"><img src="gladiator.jpg" alt="" srcset="" /></div>
+            <div class="img">
+              <img src="house-3786593.jpg" alt="" srcset="" />
+            </div>
+            <div class="img"><img src="myl3.jpg" alt="" srcset="" /></div>
+            <div class="img"><img src="php.jpg" alt="" srcset="" /></div>
+            <div class="img">
+              <img src="wallpaperflare.com_wallpaper.jpg" alt="" srcset="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer">Footer</div>
+    </div>
+  </body>
+</html>
