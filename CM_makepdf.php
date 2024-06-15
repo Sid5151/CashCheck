@@ -1,4 +1,3 @@
-//make pdf file
 <?php
 session_start();
 include "dbconnect1.php";
